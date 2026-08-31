@@ -1,0 +1,35 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <img src="/assets/logo-cream.png" alt="{{ site.nom }}">
+        <p>Termizdagi marketing agentligi. Reklama, sotuv va brend — bitta tizimda.</p>
+      </div>
+      <div>
+        <h4>Sahifalar</h4>
+        <ul>
+          <li><a href="/">Bosh sahifa</a></li>
+          <li><a href="/xizmatlar/">Xizmatlar</a></li>
+          <li><a href="/keyslar/">Keyslar</a></li>
+          <li><a href="/narxlar/">Narxlar</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/kontakt/">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Aloqa</h4>
+        <ul>
+          <li><a href="tel:{{ site.telefon_raqam }}">{{ site.telefon }}</a></li>
+          <li><a href="{{ site.telegram }}">Telegram</a></li>
+          {% if site.instagram %}<li><a href="{{ site.instagram }}">Instagram</a></li>{% endif %}
+          <li>Termiz shahri</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span>© <span id="year">2026</span> {{ site.nom }}</span>
+      <span><a href="/maxfiylik/">Maxfiylik siyosati</a></span>
+      <span>Termiz, O'zbekiston</span>
+    </div>
+  </div>
+</footer>

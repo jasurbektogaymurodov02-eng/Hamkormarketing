@@ -1,0 +1,74 @@
+---
+layout: layouts/base.njk
+title: "Keyslar"
+description: "Hamkor marketing agentligi mijozlari bilan ishlangan loyihalar va erishilgan natijalar."
+permalink: "/keyslar/"
+---
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Keyslar</span>
+    <h1>Ish natijalari</h1>
+    <p class="lead">Kartaga sichqonchani olib boring — loyiha ochiladi. Bosilganda qisqacha ma'lumot va natijalar chiqadi.</p>
+  </div>
+</section>
+
+<section class="band band--cream">
+  <div class="wrap-full">
+    {% if collections.keyslar.length %}
+
+    <div class="deck-wrap">
+      <div class="deck{% if collections.keyslar.length < 4 %} deck--few{% endif %}" role="list">
+        {% for k in collections.keyslar %}
+        <div class="deck__item" role="listitem" style="--i: {{ loop.index0 }}; --n: {{ collections.keyslar.length }}">
+          <button class="deck__card" type="button"
+                  aria-expanded="false" aria-controls="work-{{ loop.index }}">
+            <span class="deck__media">
+              <img src="{{ k.data.rasm or '/assets/og.png' }}" alt="{{ k.data.mijoz }} loyihasi — {{ k.data.xizmat | lower }}, {{ k.data.soha | lower }}" loading="lazy" width="1200" height="900">
+            </span>
+            <span class="deck__foot">
+              <span class="deck__name">{{ k.data.mijoz }}</span>
+              <span class="deck__tag">{{ k.data.xizmat }}</span>
+            </span>
+          </button>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <p class="deck-hint">Yon tomonga suring yoki kartani bosing</p>
+
+    <div class="wrap">
+      {% for k in collections.keyslar %}
+      <div class="work__panel" id="work-{{ loop.index }}" hidden>
+        <div class="work__panel-in">
+          <div class="work__text">
+            <span class="work__eyebrow">{{ k.data.mijoz }} · {{ k.data.soha }}{% if k.data.muddat %} · {{ k.data.muddat }}{% endif %}</span>
+            <h3>{{ k.data.title }}</h3>
+            {{ k.templateContent | safe }}
+
+            {% if k.data.maqola %}
+            <a class="btn btn--dark work__link" href="{{ k.data.maqola }}">Loyiha haqida batafsil</a>
+            {% endif %}
+          </div>
+          {% if k.data.korsatkichlar.length %}
+          <div class="metrics">
+            {% for m in k.data.korsatkichlar %}
+            <div><span class="val">{{ m.qiymat }}</span><span class="key">{{ m.nomi }}</span></div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% else %}
+    <div class="wrap">
+      <div class="empty">
+        <h3>Keyslar hali qo'shilmagan</h3>
+        <p>Birinchi keysni qo'shish uchun admin panelga kiring: <code>/admin</code> → Keyslar → New Keys.</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>

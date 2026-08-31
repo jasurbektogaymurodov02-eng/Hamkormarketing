@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="{{ site.nom }} — bosh sahifa">
+      <img src="/assets/logo-cream.png" alt="{{ site.nom }}">
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menyu</button>
+    <nav class="nav" id="nav">
+      <a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}>Bosh sahifa</a>
+      <a href="/xizmatlar/"{% if page.url == "/xizmatlar/" %} aria-current="page"{% endif %}>Xizmatlar</a>
+      <a href="/keyslar/"{% if page.url == "/keyslar/" %} aria-current="page"{% endif %}>Keyslar</a>
+      <a href="/narxlar/"{% if page.url == "/narxlar/" %} aria-current="page"{% endif %}>Narxlar</a>
+      <a href="/blog/"{% if "/blog/" in page.url %} aria-current="page"{% endif %}>Blog</a>
+      <a href="/kontakt/"{% if page.url == "/kontakt/" %} aria-current="page"{% endif %}>Kontakt</a>
+      <a class="btn btn--solid" href="/kontakt/#konsultatsiya">Bepul audit</a>
+    </nav>
+  </div>
+</header>

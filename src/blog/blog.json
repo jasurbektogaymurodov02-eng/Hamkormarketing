@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/maqola.njk",
+  "permalink": "/blog/{{ page.fileSlug }}/",
+  "tags": "maqolalar"
+}

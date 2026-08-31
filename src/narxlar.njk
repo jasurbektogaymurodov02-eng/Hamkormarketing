@@ -1,0 +1,122 @@
+---
+layout: layouts/base.njk
+title: "Narxlar"
+description: "Hamkor marketing agentligi xizmatlari narxi. Bir martalik loyiha va oylik hamkorlik formatlari, boshlang'ich narxlar bilan."
+permalink: "/narxlar/"
+---
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Narxlar</span>
+    <h1>Narx ish ko'lamiga qarab belgilanadi</h1>
+    <p class="lead">{{ narx.kirish }}</p>
+  </div>
+</section>
+
+<section class="band band--cream">
+  <div class="wrap">
+
+    <div class="switch reveal" role="tablist" aria-label="Ishlash formati">
+      <button type="button" role="tab" id="tab-loyiha" aria-controls="panel-loyiha" aria-selected="true">Bir martalik</button>
+      <button type="button" role="tab" id="tab-abonent" aria-controls="panel-abonent" aria-selected="false">Oylik</button>
+    </div>
+
+    <!-- Bir martalik loyiha -->
+    <div class="plan-panel" id="panel-loyiha" role="tabpanel" aria-labelledby="tab-loyiha">
+      <div class="plans reveal stagger">
+        <div class="plan">
+          <div class="plan__head">
+            <h3>{{ narx.loyiha_nomi }}</h3>
+            <p>{{ narx.loyiha_tavsif }}</p>
+          </div>
+          <div>
+            <h4>Kimga to'g'ri keladi</h4>
+            <ul>{% for x in narx.loyiha_kimga %}<li>{{ x }}</li>{% endfor %}</ul>
+          </div>
+          <div>
+            <h4>Muddat</h4>
+            <ul><li>{{ narx.loyiha_muddat }}</li></ul>
+          </div>
+          <div class="plan__price">
+            <span class="val">{{ narx.loyiha_narx }}</span>
+            <span class="note">{{ narx.loyiha_shart }}</span>
+            <a class="btn btn--dark" href="/kontakt/#konsultatsiya">Bepul audit</a>
+          </div>
+        </div>
+
+        <div class="plan">
+          <div class="plan__head">
+            <h3>Ish ichida nima bor</h3>
+            <p>Har bir loyiha alohida yig'iladi, lekin asosiy bosqichlar doim bir xil.</p>
+          </div>
+          <div>
+            <h4>Bosqichlar</h4>
+            <ul>{% for x in narx.loyiha_ichida %}<li>{{ x }}</li>{% endfor %}</ul>
+          </div>
+          <div class="plan__price">
+            <span class="note">Aniq ro'yxat auditdan keyin, taklif hujjatida yoziladi.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Oylik hamkorlik -->
+    <div class="plan-panel" id="panel-abonent" role="tabpanel" aria-labelledby="tab-abonent" hidden>
+      <div class="plans reveal stagger">
+        <div class="plan">
+          <div class="plan__head">
+            <h3>{{ narx.abonent_nomi }}</h3>
+            <p>{{ narx.abonent_tavsif }}</p>
+          </div>
+          <div>
+            <h4>Kimga to'g'ri keladi</h4>
+            <ul>{% for x in narx.abonent_kimga %}<li>{{ x }}</li>{% endfor %}</ul>
+          </div>
+          <div>
+            <h4>Muddat</h4>
+            <ul><li>{{ narx.abonent_muddat }}</li></ul>
+          </div>
+          <div class="plan__price">
+            <span class="val">{{ narx.abonent_narx }}</span>
+            <span class="note">{{ narx.abonent_shart }}</span>
+            <a class="btn btn--dark" href="/kontakt/#konsultatsiya">Bepul audit</a>
+          </div>
+        </div>
+
+        <div class="plan">
+          <div class="plan__head">
+            <h3>Har oy nima bo'ladi</h3>
+            <p>Oylik ish takrorlanuvchi tartibda yuritiladi — siz nimaga pul to'layotganingizni ko'rib turasiz.</p>
+          </div>
+          <div>
+            <h4>Tarkibi</h4>
+            <ul>{% for x in narx.abonent_ichida %}<li>{{ x }}</li>{% endfor %}</ul>
+          </div>
+          <div class="plan__price">
+            <span class="note">Ish hajmi oy boshida kelishiladi va oy oxirida hisobot beriladi.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="plans-note reveal">{{ narx.eslatma }}</p>
+  </div>
+</section>
+
+<section class="band band--green">
+  <div class="wrap">
+    <div class="lockup reveal">
+      <h2>{{ narx.faq_sarlavha }}</h2>
+      <div class="rule"></div>
+      <p class="sub">{{ narx.faq_kirish }}</p>
+    </div>
+
+    <div class="faq reveal">
+      {% for f in narx.faq %}
+      <details>
+        <summary>{{ f.savol }}</summary>
+        <div class="faq__body"><p>{{ f.javob }}</p></div>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>

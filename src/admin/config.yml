@@ -1,0 +1,115 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+locale: "en"
+publish_mode: simple
+
+collections:
+  # ---------------------------------------------------------------- MAQOLALAR
+  - name: "maqolalar"
+    label: "Maqolalar"
+    label_singular: "Maqola"
+    folder: "src/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{sana | date('DD.MM.YYYY')}} — {{title}}"
+    sortable_fields: ["sana", "title"]
+    fields:
+      - { name: "title", label: "Sarlavha", widget: "string" }
+      - { name: "sana", label: "Sana", widget: "datetime", date_format: "DD.MM.YYYY", time_format: false, picker_utc: true }
+      - name: "turkum"
+        label: "Turkum"
+        widget: "select"
+        required: false
+        options: ["SMM", "Sotuv", "Strategiya", "Brending", "Umumiy"]
+      - { name: "qisqacha", label: "Qisqacha (ro'yxatda va Google'da ko'rinadi)", widget: "text", required: false }
+      - { name: "body", label: "Maqola matni", widget: "markdown" }
+
+  # ------------------------------------------------------------------ KEYSLAR
+  - name: "keyslar"
+    label: "Keyslar"
+    label_singular: "Keys"
+    folder: "src/keys"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{mijoz}} — {{title}}"
+    fields:
+      - { name: "title", label: "Sarlavha (natijani bir jumlada)", widget: "string" }
+      - { name: "mijoz", label: "Mijoz nomi", widget: "string" }
+      - { name: "soha", label: "Soha", widget: "string" }
+      - { name: "shahar", label: "Shahar", widget: "string", required: false, default: "Termiz" }
+      - name: "xizmat"
+        label: "Xizmat"
+        widget: "select"
+        options: ["SMM", "Sotuv bo'limi qurish", "Marketing strategiyasi", "Brending"]
+      - { name: "muddat", label: "Ish muddati", widget: "string", required: false }
+      - { name: "rasm", label: "Rasm (ro'yxatda ko'rinadi, 4:3 nisbatda)", widget: "image", required: false }
+      - { name: "maqola", label: "Batafsil maqola havolasi (masalan /blog/nihol-academy/) — bo'sh qoldirsa tugma chiqmaydi", widget: "string", required: false }
+      - { name: "tartib", label: "Tartib raqami (kichigi yuqorida turadi)", widget: "number", default: 1, value_type: "int" }
+      - name: "korsatkichlar"
+        label: "Ko'rsatkichlar"
+        widget: "list"
+        required: false
+        max: 4
+        summary: "{{fields.qiymat}} — {{fields.nomi}}"
+        fields:
+          - { name: "qiymat", label: "Qiymat (masalan: 3.4x)", widget: "string" }
+          - { name: "nomi", label: "Nomi (masalan: ROMI)", widget: "string" }
+      - { name: "body", label: "Vaziyat / Nima qildik / Natija", widget: "markdown" }
+
+  # ------------------------------------------------------------- SOZLAMALAR
+  - name: "sozlamalar"
+    label: "Sayt sozlamalari"
+    files:
+      - name: "narxlar"
+        label: "Narxlar va savollar"
+        file: "src/_data/narx.json"
+        fields:
+          - { name: "sarlavha", label: "Sarlavha", widget: "string" }
+          - { name: "kirish", label: "Kirish matni", widget: "text" }
+          - { name: "eslatma", label: "Narxlar ostidagi eslatma", widget: "text" }
+
+          - { name: "loyiha_nomi", label: "1-format nomi", widget: "string" }
+          - { name: "loyiha_tavsif", label: "1-format tavsifi", widget: "text" }
+          - { name: "loyiha_kimga", label: "1-format — kimga to'g'ri keladi", widget: "list" }
+          - { name: "loyiha_ichida", label: "1-format — bosqichlar", widget: "list" }
+          - { name: "loyiha_muddat", label: "1-format — muddat", widget: "string" }
+          - { name: "loyiha_narx", label: "1-format — boshlang'ich narx", widget: "string" }
+          - { name: "loyiha_shart", label: "1-format — to'lov sharti", widget: "string" }
+
+          - { name: "abonent_nomi", label: "2-format nomi", widget: "string" }
+          - { name: "abonent_tavsif", label: "2-format tavsifi", widget: "text" }
+          - { name: "abonent_kimga", label: "2-format — kimga to'g'ri keladi", widget: "list" }
+          - { name: "abonent_ichida", label: "2-format — tarkibi", widget: "list" }
+          - { name: "abonent_muddat", label: "2-format — muddat", widget: "string" }
+          - { name: "abonent_narx", label: "2-format — boshlang'ich narx", widget: "string" }
+          - { name: "abonent_shart", label: "2-format — to'lov sharti", widget: "string" }
+
+          - { name: "faq_sarlavha", label: "Savollar bo'limi sarlavhasi", widget: "string" }
+          - { name: "faq_kirish", label: "Savollar bo'limi kirishi", widget: "text" }
+          - name: "faq"
+            label: "Savol-javoblar"
+            widget: "list"
+            summary: "{{fields.savol}}"
+            fields:
+              - { name: "savol", label: "Savol", widget: "string" }
+              - { name: "javob", label: "Javob", widget: "text" }
+
+      - name: "aloqa"
+        label: "Aloqa ma'lumotlari"
+        file: "src/_data/site.json"
+        fields:
+          - { name: "nom", label: "Sayt nomi", widget: "string" }
+          - { name: "qisqa", label: "Qisqa nom", widget: "string" }
+          - { name: "tavsif", label: "Sayt tavsifi (Google'da ko'rinadi)", widget: "text" }
+          - { name: "telefon", label: "Telefon (ko'rinadigan)", widget: "string" }
+          - { name: "telefon_raqam", label: "Telefon (bo'shliqsiz, masalan +998888210200)", widget: "string" }
+          - { name: "telegram", label: "Telegram havolasi", widget: "string" }
+          - { name: "instagram", label: "Instagram havolasi", widget: "string", required: false }
+          - { name: "manzil", label: "Manzil", widget: "string" }
+          - { name: "ish_vaqti", label: "Ish vaqti", widget: "string" }
+          - { name: "domen", label: "Sayt domeni (https:// bilan)", widget: "string" }

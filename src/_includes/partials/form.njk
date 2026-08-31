@@ -1,0 +1,46 @@
+<form class="form reveal" id="lead-form" novalidate>
+  <div class="form-grid">
+    <div class="field">
+      <label for="name">Ismingiz</label>
+      <input id="name" name="name" type="text" required autocomplete="name" placeholder="Masalan: Aziz">
+    </div>
+    <div class="field">
+      <label for="phone">Telefon</label>
+      <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="+998 90 123 45 67">
+    </div>
+  </div>
+
+  <div class="form-grid">
+    <div class="field">
+      <label for="business">Biznesingiz</label>
+      <input id="business" name="business" type="text" placeholder="Masalan: mebel do'koni">
+    </div>
+    <div class="field">
+      <label for="service">Qaysi xizmat</label>
+      <select id="service" name="service">
+        <option value="Aniq emas">Hali aniq emas</option>
+        <option value="SMM">SMM</option>
+        <option value="Sotuv bo'limi qurish">Sotuv bo'limi qurish</option>
+        <option value="Marketing strategiyasi">Marketing strategiyasi</option>
+        <option value="Brending">Brending</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="message">Qisqacha vaziyat <span style="text-transform:none;letter-spacing:0">(ixtiyoriy)</span></label>
+    <textarea id="message" name="message" placeholder="Hozir nima qilyapsiz va nimadan qoniqmayapsiz?"></textarea>
+  </div>
+
+  <div class="hp" aria-hidden="true">
+    <label for="company">Kompaniya</label>
+    <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+  </div>
+
+  <div class="form-foot">
+    <button class="btn btn--solid" type="submit" data-label="Ariza yuborish">Ariza yuborish</button>
+    <span class="fine">Ma'lumotlaringiz faqat siz bilan bog'lanish uchun ishlatiladi.</span>
+  </div>
+
+  <p class="form-msg" id="form-msg" role="status" hidden></p>
+</form>

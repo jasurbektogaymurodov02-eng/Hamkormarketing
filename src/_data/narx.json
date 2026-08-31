@@ -1,0 +1,71 @@
+{
+  "sarlavha": "Narxlar",
+  "kirish": "Ikki xil ishlash formati bor. Qaysi biri to'g'ri kelishini birinchi auditda birga aniqlaymiz.",
+  "eslatma": "Loyihalarimiz odatda 700 dan 5 000 dollargacha oraliqda bo'ladi. Aniq summa qaysi xizmat kerakligiga, biznesning hajmiga va ish ko'lamiga qarab belgilanadi — buni auditdan keyin taklif hujjatida yozib beramiz. Yashirin to'lov yo'q.",
+  "loyiha_nomi": "Bir martalik loyiha",
+  "loyiha_tavsif": "Boshi va oxiri aniq ish. Nima qilinishi, qancha muddat va qancha turishi oldindan kelishiladi.",
+  "loyiha_kimga": [
+    "Yangi ochilayotgan biznes",
+    "Brend va firma uslubi kerak bo'lganlar",
+    "Marketing strategiyasi kerak bo'lganlar",
+    "Sotuv bo'limini bir marta yo'lga qo'yish"
+  ],
+  "loyiha_ichida": [
+    "Bozor va raqobat tahlili",
+    "Pozitsionlash va taklif",
+    "Kanal va byudjet rejasi",
+    "Topshirish va o'quv sessiyasi"
+  ],
+  "loyiha_muddat": "3–8 hafta",
+  "loyiha_narx": "700–5 000 $",
+  "loyiha_shart": "Aniq summa auditdan keyin. To'lov ikki qismda: boshlanishda va topshirishda.",
+  "abonent_nomi": "Oylik hamkorlik",
+  "abonent_tavsif": "Uzluksiz ish. Har oy reja, ijro va hisobot. Marketing bo'limi o'rniga ishlaydi.",
+  "abonent_kimga": [
+    "Doimiy reklama yurituvchi bizneslar",
+    "SMM va target kerak bo'lganlar",
+    "Sotuv bo'limini nazorat qilish kerak bo'lganlar",
+    "O'z marketologi yo'q bizneslar"
+  ],
+  "abonent_ichida": [
+    "Kontent va target reklama",
+    "CRM va murojaatlar nazorati",
+    "Oylik hisobot va uchrashuv",
+    "Doimiy aloqa"
+  ],
+  "abonent_muddat": "Kamida 3 oy",
+  "abonent_narx": "700–5 000 $",
+  "abonent_shart": "Oylik to'lov, summa ish hajmiga qarab. Reklama byudjeti alohida.",
+  "faq_sarlavha": "Ko'p beriladigan savollar",
+  "faq_kirish": "Suhbatlarda eng ko'p uchraydigan savollar. Javobi ro'yxatda bo'lmasa — so'rang.",
+  "faq": [
+    {
+      "savol": "Bepul audit haqiqatan bepulmi?",
+      "javob": "Ha. 40–60 daqiqalik audit uchun to'lov yo'q va shartnoma talab qilinmaydi. Biznesingizni, hozirgi reklama xarajatingizni va sotuv jarayoningizni ko'rib chiqamiz, so'ng bir nechta aniq tavsiya beramiz. Keyin hamkorlik qilish-qilmaslikni o'zingiz hal qilasiz."
+    },
+    {
+      "savol": "Nega saytda aniq narx yozilmagan?",
+      "javob": "Chunki bir xil xizmat ikki biznesga bir xil turmaydi. Yangi ochilgan do'kon uchun SMM bilan bir necha filialli tarmoq uchun SMM — ish hajmi jihatidan butunlay boshqa narsa. Umumiy oraliq 700 dan 5 000 dollargacha; sizga tegishli aniq summani auditdan keyin, ish ko'lami aniq bo'lganda aytamiz."
+    },
+    {
+      "savol": "Natijani kafolatlaysizmi?",
+      "javob": "Aniq raqamni kafolatlaydigan agentlikdan ehtiyot bo'ling — natija faqat bizga emas, mahsulotingizga, narxingizga va sotuvchilaringizga ham bog'liq. Biz boshqa narsani kafolatlaymiz: har oy raqamli hisobot va nima ishlagan-ishlamaganini ochiq aytish."
+    },
+    {
+      "savol": "Reklama byudjeti narxga kiradimi?",
+      "javob": "Yo'q. Xizmat haqi va reklama byudjeti alohida. Byudjetni siz to'g'ridan-to'g'ri Instagram yoki boshqa platformaga to'laysiz — bu pul bizdan o'tmaydi, shuning uchun har bir so'm qayerga ketgani ko'rinib turadi."
+    },
+    {
+      "savol": "Qancha vaqtda natija ko'rinadi?",
+      "javob": "Target reklamada dastlabki murojaatlar 1–2 hafta ichida keladi. Lekin barqaror natija odatda 2–3 oyda shakllanadi: shu vaqt ichida qaysi kreativ va qaysi auditoriya ishlashini aniqlaymiz. Brending va strategiyada natija uzoqroq muddatda ko'rinadi."
+    },
+    {
+      "savol": "Faqat bitta xizmatni olsam bo'ladimi?",
+      "javob": "Bo'ladi. Masalan faqat brending yoki faqat sotuv bo'limini qurish. Lekin auditda ochiq aytamiz: agar muammo boshqa joyda bo'lsa, siz so'ragan xizmat yordam bermasligi mumkin."
+    },
+    {
+      "savol": "Shartnoma tuzasizmi?",
+      "javob": "Ha. Nima qilinishi, muddat, to'lov tartibi va ikki tomonning javobgarligi yozma shaklda kelishiladi. Og'zaki kelishuv bilan ishlamaymiz."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+---
+<article>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">{% if turkum %}{{ turkum }} · {% endif %}<time datetime="{{ sana | iso }}">{{ sana | sana }}</time></span>
+      <h1>{{ title }}</h1>
+      {% if qisqacha %}<p class="lead">{{ qisqacha }}</p>{% endif %}
+    </div>
+  </section>
+
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="prose">
+        {{ content | safe }}
+      </div>
+
+      <div class="post-foot">
+        <a class="btn btn--outline-dark" href="/blog/">Barcha maqolalar</a>
+        <a class="btn btn--dark" href="/kontakt/#konsultatsiya">Bepul audit olish</a>
+      </div>
+    </div>
+  </section>
+</article>

@@ -1,0 +1,73 @@
+---
+layout: layouts/base.njk
+ctaYashir: true
+title: "Kontakt"
+description: "Hamkor marketing agentligi bilan bog'laning. Termiz shahri. Bepul audit uchun ariza qoldiring."
+permalink: "/kontakt/"
+---
+<section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Kontakt</span>
+      <h1>Bog'lanish</h1>
+      <p class="lead">Qo'ng'iroq qiling, Telegramga yozing yoki quyidagi formani to'ldiring. Ish kunlari 1 kun ichida javob beramiz.</p>
+    </div>
+  </section>
+
+  <section class="band band--cream">
+    <div class="wrap">
+      <div class="split">
+        <div class="lockup">
+          <h2>Ma'lumotlar</h2>
+          <div class="rule"></div>
+          <p class="sub">Termiz shahri</p>
+        </div>
+        <div>
+          <div class="contact-list reveal">
+            <div class="row">
+              <span class="k">Telefon</span>
+              <span class="v"><a href="tel:{{ site.telefon_raqam }}">{{ site.telefon }}</a></span>
+            </div>
+            <div class="row">
+              <span class="k">Telegram</span>
+              <span class="v"><a href="https://t.me/+998888210200" target="_blank" rel="noopener">t.me/+998888210200</a></span>
+            </div>
+            <div class="row">
+              <span class="k">Manzil</span>
+              <span class="v">Termiz shahri, Surxondaryo viloyati</span>
+            </div>
+            <div class="row">
+              <span class="k">Ish vaqti</span>
+              <span class="v">Dushanba–Shanba, 09:00–18:00</span>
+            </div>
+          </div>
+
+          <!-- Xarita: aniq manzil bo'lgach, Google Maps'dan "Share → Embed a map"
+               orqali olingan iframe kodini shu yerga qo'ying. -->
+          <div class="map reveal">
+            <iframe
+              title="Hamkor marketing agentligi — Termiz"
+              src="https://www.google.com/maps?q=Termiz,%20Surxondaryo,%20O'zbekiston&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--green" id="konsultatsiya">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <div class="lockup">
+            <h2>Bepul audit</h2>
+            <div class="rule"></div>
+            <p class="sub">Javob beramiz — 1 ish kuni ichida</p>
+          </div>
+          <p class="lead" style="color: var(--on-green-mute)">Audit 40–60 daqiqa davom etadi. Biznesingiz, hozirgi reklama xarajati va sotuv jarayonini ko'rib chiqamiz, so'ng bir nechta aniq tavsiya beramiz. To'lov yo'q, shartnoma talab qilinmaydi.</p>
+        </div>
+
+        {% include "partials/form.njk" %}
+      </div>
+    </div>
+  </section>

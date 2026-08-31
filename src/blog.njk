@@ -1,0 +1,39 @@
+---
+layout: layouts/base.njk
+title: "Blog"
+description: "Marketing, sotuv va brending haqida amaliy maqolalar — Hamkor marketing agentligi."
+permalink: "/blog/"
+---
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Blog</span>
+    <h1>Marketing haqida amaliy maqolalar</h1>
+    <p class="lead">Nazariya emas — bizneslar bilan ishlashda uchragan real vaziyatlar va ulardan chiqqan xulosalar.</p>
+  </div>
+</section>
+
+<section class="band band--cream">
+  <div class="wrap">
+    {% if collections.maqolalar.length %}
+    <div class="posts reveal stagger">
+      {% for p in collections.maqolalar %}
+      <a class="post-item reveal" href="{{ p.url }}">
+        <div class="post-date">
+          <time datetime="{{ p.data.sana | iso }}">{{ p.data.sana | sana }}</time>
+          {% if p.data.turkum %}<span>{{ p.data.turkum }}</span>{% endif %}
+        </div>
+        <div class="post-body">
+          <h3>{{ p.data.title }}</h3>
+          {% if p.data.qisqacha %}<p>{{ p.data.qisqacha }}</p>{% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty">
+      <h3>Maqolalar hali qo'shilmagan</h3>
+      <p>Birinchi maqolani yozish uchun admin panelga kiring: <code>/admin</code> → Maqolalar → New Maqolalar.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
