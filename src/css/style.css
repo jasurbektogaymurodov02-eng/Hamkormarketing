@@ -3,6 +3,23 @@
    Ranglar logotipdan olingan: #00423E / #F1EFE2
    ========================================================================== */
 
+
+/* Shriftlar — lokal Inter (Google Fonts'ga bog'liqlik yo'q).
+   Ikki fayl: Regular (400-500) va Bold (600-900). */
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter_18pt-Regular.ttf") format("truetype");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter_18pt-Bold.ttf") format("truetype");
+  font-weight: 600 900;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --green:       #00423E;
   --green-deep:  #002F2C;
@@ -19,9 +36,9 @@
   --rule-green: rgba(241, 239, 226, 0.22);
   --rule-cream: rgba(0, 66, 62, 0.18);
 
-  --font-display: "Saira", "Arial Narrow", sans-serif;
-  --font-body:    "IBM Plex Sans", system-ui, -apple-system, sans-serif;
-  --font-mono:    "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+  --font-body:    "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono:    "Inter", system-ui, -apple-system, sans-serif;
 
   /* Qatlamlar tartibi — tarqoq raqamlar o'rniga nomlangan bosqichlar */
   --z-base: 1;
