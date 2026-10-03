@@ -69,9 +69,13 @@ permalink: "/kalkulyator/"
             <div><dt>Jami sarflangan</dt><dd id="cac-total">—</dd></div>
           </dl>
           <p class="calc__verdict" id="cac-verdict" hidden></p>
-          <button type="button" class="calc__more" data-goto="tab-ltv">Bu mijoz o'zini qoplaydimi? LTV ni hisoblang →</button>
+          <div class="calc__links">
+            <a class="calc__more" href="#cac-diag">Batafsil tahlil va tavsiyalar ↓</a>
+            <button type="button" class="calc__more" data-goto="tab-ltv">Bu mijoz o'zini qoplaydimi? LTV ni hisoblang →</button>
+          </div>
         </div>
       </div>
+      <section class="diag" id="cac-diag" aria-label="CAC bo'yicha batafsil tahlil" hidden></section>
     </div>
 
     <!-- ROMI — marketingga tikilgan pulning qaytimi -->
@@ -111,8 +115,12 @@ permalink: "/kalkulyator/"
             <div><dt>Tushumdan hisoblangan ROI <span class="opt">bo'rttirilgan</span></dt><dd id="romi-naive">—</dd></div>
           </dl>
           <p class="calc__verdict" id="romi-verdict" hidden></p>
+          <div class="calc__links">
+            <a class="calc__more" href="#romi-diag">Batafsil tahlil va tavsiyalar ↓</a>
+          </div>
         </div>
       </div>
+      <section class="diag" id="romi-diag" aria-label="ROMI bo'yicha batafsil tahlil" hidden></section>
     </div>
 
     <!-- LTV — mijozning butun davrdagi qiymati -->
@@ -173,8 +181,12 @@ permalink: "/kalkulyator/"
             <div><dt>Jami xaridlar soni</dt><dd id="ltv-count">—</dd></div>
           </dl>
           <p class="calc__verdict" id="ltv-verdict" hidden></p>
+          <div class="calc__links">
+            <a class="calc__more" href="#ltv-diag">Batafsil tahlil va tavsiyalar ↓</a>
+          </div>
         </div>
       </div>
+      <section class="diag" id="ltv-diag" aria-label="LTV bo'yicha batafsil tahlil" hidden></section>
     </div>
 
     <p class="calc-cta reveal">Raqamlar yoqmadimi? <a href="/kontakt/#konsultatsiya">Bepul auditda</a> qaysi kanal pulni yeyayotganini birga topamiz.</p>
