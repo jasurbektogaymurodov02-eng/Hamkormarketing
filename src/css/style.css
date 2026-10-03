@@ -291,6 +291,20 @@ p:last-child { margin-bottom: 0; }
   .nav .btn { margin-top: 18px; justify-content: center; border-bottom: none; }
 }
 
+/* Planshet/kichik noutbuk: 7 ta band bir qatorga sig'sin */
+.nav a { white-space: nowrap; }
+@media (min-width: 901px) and (max-width: 1140px) {
+  .nav { gap: 14px; }
+  .nav a { font-size: .7rem; letter-spacing: .08em; }
+  .nav .btn { padding: 12px 16px; }
+}
+@media (min-width: 901px) and (max-width: 1010px) {
+  .nav { gap: 11px; }
+  .nav a { letter-spacing: .04em; }
+  .nav .btn { padding: 11px 12px; }
+  .brand img { width: 128px; }
+}
+
 /* --------------------------------------------------------------------------
    Hero
    -------------------------------------------------------------------------- */
@@ -1224,4 +1238,215 @@ a.card:hover ul li { border-top-color: var(--rule-green); }
 @media (max-width: 700px) {
   .deck--few .deck__item { width: clamp(220px, 66vw, 300px); margin-left: -38px; }
   .deck--few .deck__item:first-child { margin-left: 0; }
+}
+
+/* ==========================================================================
+   KALKULYATOR — CAC, ROMI, LTV
+   ========================================================================== */
+
+.calc-band .switch { margin-bottom: 18px; }
+
+.calc-sample {
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  letter-spacing: .04em;
+  color: var(--on-green-mute);
+  margin-bottom: clamp(32px, 4.5vw, 56px);
+}
+
+/* Chapda maydonlar, o'ngda natija kartasi */
+.calc {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+
+.calc__intro { margin-bottom: 10px; }
+.calc__title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+.calc__intro p { color: var(--on-green-mute); max-width: 52ch; }
+
+.calc__input { position: relative; }
+.calc__input input {
+  font-size: 1.1rem;
+  font-variant-numeric: tabular-nums;
+  padding-right: 64px;
+}
+.calc__input .unit {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--on-green-mute);
+  pointer-events: none;
+}
+
+/* Raqam + davr tanlovi (oyiga / yiliga) yonma-yon */
+.calc__pair { display: grid; grid-template-columns: minmax(0, 1fr) 128px; gap: 10px; }
+
+.field .hint {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .03em;
+  line-height: 1.5;
+  color: var(--on-green-mute);
+  margin: 0;
+}
+.calc__in > .hint {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .03em;
+  color: var(--on-green-mute);
+  margin: -6px 0 0;
+}
+
+.field label .opt,
+.calc__rows .opt {
+  font-size: .64rem;
+  letter-spacing: .1em;
+  color: var(--amber);
+  margin-left: 6px;
+}
+.calc__rows .opt { color: var(--on-cream-mute); text-transform: uppercase; }
+
+.calc__clear {
+  justify-self: start;
+  background: none;
+  border: 0;
+  padding: 6px 0;
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--on-green-mute);
+  border-bottom: 1px solid var(--rule-green);
+  cursor: pointer;
+  transition: color .2s ease, border-color .2s ease;
+}
+.calc__clear:hover { color: var(--on-green); border-bottom-color: var(--on-green); }
+
+/* Natija kartasi — to'q fonda krem karta, ko'z darhol shu yerga tushadi */
+.calc__out {
+  background: var(--cream);
+  color: var(--on-cream);
+  border-radius: 2px;
+  padding: clamp(28px, 3.5vw, 44px);
+  position: sticky;
+  top: 100px;
+}
+
+.calc__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--on-cream-mute);
+}
+
+.calc__big {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 4.4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: break-word;
+  margin: 12px 0 26px;
+}
+.calc__big.is-long { font-size: clamp(1.7rem, 3.2vw, 2.5rem); }
+.calc__unit {
+  font-size: .42em;
+  letter-spacing: 0;
+  white-space: nowrap;
+  color: var(--on-cream-mute);
+}
+
+.calc__rows { margin: 0; }
+.calc__rows > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-top: 1px solid var(--rule-cream);
+}
+.calc__rows dt { font-size: .92rem; color: var(--on-cream-mute); }
+.calc__rows dd {
+  margin: 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* Xulosa — rangli chiziq ohangni beradi, matn rangi o'zgarmaydi */
+.calc__verdict {
+  margin: 24px 0 0;
+  padding: 14px 16px;
+  border-left: 3px solid var(--green-soft);
+  background: rgba(0, 66, 62, .05);
+  font-size: .95rem;
+  line-height: 1.55;
+}
+.calc__verdict[hidden] { display: none; }
+.calc__verdict::before {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.calc__verdict[data-tone="info"]::before { content: "Eslatma"; }
+.calc__verdict[data-tone="ok"]   { border-left-color: var(--green); background: rgba(0, 66, 62, .08); }
+.calc__verdict[data-tone="ok"]::before { content: "Yaxshi"; }
+.calc__verdict[data-tone="warn"] { border-left-color: var(--amber); background: rgba(212, 167, 44, .14); }
+.calc__verdict[data-tone="warn"]::before { content: "E\2019tibor bering"; }
+.calc__verdict[data-tone="bad"]  { border-left-color: #B8492F; background: rgba(184, 73, 47, .09); }
+.calc__verdict[data-tone="bad"]::before { content: "Xavf"; color: #9C3A23; }
+
+.calc__more {
+  display: inline-block;
+  margin-top: 22px;
+  background: none;
+  border: 0;
+  padding: 0 0 3px;
+  border-bottom: 1px solid var(--amber);
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--green);
+  cursor: pointer;
+}
+.calc__more:hover { color: var(--green-soft); }
+
+.calc-cta {
+  margin-top: clamp(40px, 6vw, 72px);
+  padding-top: 26px;
+  border-top: 1px solid var(--rule-green);
+  color: var(--on-green-mute);
+  font-size: 1.05rem;
+}
+.calc-cta a { color: var(--on-green); text-decoration: none; border-bottom: 1px solid var(--amber); }
+.calc-cta a:hover { color: var(--amber); }
+
+@media (max-width: 900px) {
+  .calc { grid-template-columns: 1fr; }
+  .calc__out { position: static; }
+}
+
+@media (max-width: 480px) {
+  .calc__pair { grid-template-columns: minmax(0, 1fr) 104px; }
+  .calc__rows > div { grid-template-columns: 1fr; gap: 2px; }
+  .calc__rows dd { text-align: left; }
 }

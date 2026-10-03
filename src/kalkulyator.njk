@@ -1,0 +1,252 @@
+---
+layout: layouts/base.njk
+title: "Marketing kalkulyatori: CAC, ROMI, LTV"
+description: "Bitta mijoz sizga qanchaga tushyapti, reklama o'zini oqlayaptimi va mijoz butun davr davomida qancha foyda keltiradi — CAC, ROMI va LTV ni bir daqiqada bepul hisoblang."
+permalink: "/kalkulyator/"
+---
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Marketing kalkulyatori</span>
+    <h1>Reklamangiz o'zini oqlayaptimi?</h1>
+    <p class="lead">Uchta raqam biznesdagi marketing ahvolini aytib beradi: bitta mijoz sizga qanchaga tushyapti, reklamaga tikilgan har so'm qancha foyda qaytaryapti va bitta mijoz siz bilan bo'lgan butun davrda qancha olib keladi.</p>
+  </div>
+</section>
+
+<section class="band band--deep calc-band">
+  <div class="wrap">
+
+    <div class="switch reveal" role="tablist" aria-label="Ko'rsatkich">
+      <button type="button" role="tab" id="tab-cac" aria-controls="panel-cac" aria-selected="true">CAC</button>
+      <button type="button" role="tab" id="tab-romi" aria-controls="panel-romi" aria-selected="false">ROMI</button>
+      <button type="button" role="tab" id="tab-ltv" aria-controls="panel-ltv" aria-selected="false">LTV</button>
+    </div>
+
+    <p class="calc-sample reveal">Maydonlarda namuna raqamlar turibdi — o'zingiznikini yozing, natija darhol yangilanadi.</p>
+
+    <!-- CAC — bitta mijozni jalb qilish narxi -->
+    <div class="plan-panel" id="panel-cac" role="tabpanel" aria-labelledby="tab-cac">
+      <div class="calc reveal">
+        <form class="calc__in form" novalidate>
+          <div class="calc__intro">
+            <h2 class="calc__title">CAC — bitta mijoz narxi</h2>
+            <p>Bitta yangi mijozni olib kelish uchun marketing va sotuvga qancha pul ketganini ko'rsatadi. Bir oy yoki bitta kampaniya kabi aniq davrni oling.</p>
+          </div>
+
+          <div class="field">
+            <label for="cac-ads">Reklama xarajati</label>
+            <div class="calc__input"><input id="cac-ads" data-num inputmode="numeric" autocomplete="off" value="3 000 000"><span class="unit">so'm</span></div>
+            <p class="hint">Target, bloger, Google — shu davrdagi barcha reklama to'lovlari.</p>
+          </div>
+          <div class="field">
+            <label for="cac-other">Boshqa marketing xarajatlari</label>
+            <div class="calc__input"><input id="cac-other" data-num inputmode="numeric" autocomplete="off" value="2 000 000"><span class="unit">so'm</span></div>
+            <p class="hint">SMM mutaxassis, dizayn, video, agentlik, sotuvchi bonusi. Bo'lmasa bo'sh qoldiring.</p>
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="cac-leads">Murojaatlar (lidlar)</label>
+              <div class="calc__input"><input id="cac-leads" data-num inputmode="numeric" autocomplete="off" value="120"><span class="unit">ta</span></div>
+            </div>
+            <div class="field">
+              <label for="cac-clients">Yangi mijozlar</label>
+              <div class="calc__input"><input id="cac-clients" data-num inputmode="numeric" autocomplete="off" value="25"><span class="unit">ta</span></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cac-check">O'rtacha chek <span class="opt">ixtiyoriy</span></label>
+            <div class="calc__input"><input id="cac-check" data-num data-key="check" inputmode="numeric" autocomplete="off" value="450 000"><span class="unit">so'm</span></div>
+            <p class="hint">Bitta xarid o'rtacha qancha. CAC ni shu bilan solishtiramiz.</p>
+          </div>
+          <button type="button" class="calc__clear" data-clear>Maydonlarni tozalash</button>
+        </form>
+
+        <div class="calc__out" aria-live="polite">
+          <span class="calc__label">Bitta mijoz narxi</span>
+          <output class="calc__big" id="cac-out">—</output>
+          <dl class="calc__rows">
+            <div><dt>Bitta murojaat narxi (CPL)</dt><dd id="cac-cpl">—</dd></div>
+            <div><dt>Murojaatdan mijozga o'tish</dt><dd id="cac-conv">—</dd></div>
+            <div><dt>Jami sarflangan</dt><dd id="cac-total">—</dd></div>
+          </dl>
+          <p class="calc__verdict" id="cac-verdict" hidden></p>
+          <button type="button" class="calc__more" data-goto="tab-ltv">Bu mijoz o'zini qoplaydimi? LTV ni hisoblang →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROMI — marketingga tikilgan pulning qaytimi -->
+    <div class="plan-panel" id="panel-romi" role="tabpanel" aria-labelledby="tab-romi" hidden>
+      <div class="calc reveal">
+        <form class="calc__in form" novalidate>
+          <div class="calc__intro">
+            <h2 class="calc__title">ROMI — reklama qaytimi</h2>
+            <p>Reklamaga tikilgan har so'm qancha sof foyda bo'lib qaytganini ko'rsatadi. Tushum emas, aynan foyda — shuning uchun marja kerak.</p>
+          </div>
+
+          <div class="field">
+            <label for="romi-spend">Marketing xarajati</label>
+            <div class="calc__input"><input id="romi-spend" data-num inputmode="numeric" autocomplete="off" value="5 000 000"><span class="unit">so'm</span></div>
+            <p class="hint">Reklama va unga bog'liq barcha xarajatlar.</p>
+          </div>
+          <div class="field">
+            <label for="romi-rev">Reklamadan kelgan savdo</label>
+            <div class="calc__input"><input id="romi-rev" data-num inputmode="numeric" autocomplete="off" value="18 000 000"><span class="unit">so'm</span></div>
+            <p class="hint">Shu reklama orqali kelgan mijozlar to'lagan umumiy summa.</p>
+          </div>
+          <div class="field">
+            <label for="romi-margin">Marja</label>
+            <div class="calc__input"><input id="romi-margin" data-dec data-key="margin" inputmode="decimal" autocomplete="off" value="40"><span class="unit">%</span></div>
+            <p class="hint">Tannarx chiqib ketgandan keyin qoladigan ulush. 100 000 so'mlik mahsulot tannarxi 60 000 bo'lsa — marja 40%.</p>
+          </div>
+          <button type="button" class="calc__clear" data-clear>Maydonlarni tozalash</button>
+        </form>
+
+        <div class="calc__out" aria-live="polite">
+          <span class="calc__label">Reklama qaytimi (ROMI)</span>
+          <output class="calc__big" id="romi-out">—</output>
+          <dl class="calc__rows">
+            <div><dt>Marketingdan sof foyda</dt><dd id="romi-profit">—</dd></div>
+            <div><dt>Har 1 so'm reklamaga savdo (ROAS)</dt><dd id="romi-roas">—</dd></div>
+            <div><dt>Zararsizlik uchun kerakli ROAS</dt><dd id="romi-be">—</dd></div>
+            <div><dt>Tushumdan hisoblangan ROI <span class="opt">bo'rttirilgan</span></dt><dd id="romi-naive">—</dd></div>
+          </dl>
+          <p class="calc__verdict" id="romi-verdict" hidden></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LTV — mijozning butun davrdagi qiymati -->
+    <div class="plan-panel" id="panel-ltv" role="tabpanel" aria-labelledby="tab-ltv" hidden>
+      <div class="calc reveal">
+        <form class="calc__in form" novalidate>
+          <div class="calc__intro">
+            <h2 class="calc__title">LTV — mijoz qiymati</h2>
+            <p>Bitta mijoz siz bilan bo'lgan butun davrda qancha foyda keltirishini ko'rsatadi. CAC bilan solishtirsangiz, reklamaga qancha sarflash mumkinligi ma'lum bo'ladi.</p>
+          </div>
+
+          <div class="field">
+            <label for="ltv-check">O'rtacha chek</label>
+            <div class="calc__input"><input id="ltv-check" data-num data-key="check" inputmode="numeric" autocomplete="off" value="450 000"><span class="unit">so'm</span></div>
+          </div>
+          <div class="field">
+            <label for="ltv-freq">Bir mijoz necha marta xarid qiladi</label>
+            <div class="calc__pair">
+              <div class="calc__input"><input id="ltv-freq" data-dec inputmode="decimal" autocomplete="off" value="1"><span class="unit">marta</span></div>
+              <select id="ltv-freq-per" aria-label="Qaysi davrda">
+                <option value="1" selected>oyiga</option>
+                <option value="12">yiliga</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ltv-life">Mijoz siz bilan qancha qoladi</label>
+            <div class="calc__pair">
+              <div class="calc__input"><input id="ltv-life" data-dec inputmode="decimal" autocomplete="off" value="8"></div>
+              <select id="ltv-life-unit" aria-label="Muddat birligi">
+                <option value="1" selected>oy</option>
+                <option value="12">yil</option>
+              </select>
+            </div>
+            <p class="hint">Birinchi xariddan oxirgisigacha o'rtacha qancha vaqt o'tadi.</p>
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="ltv-margin">Marja</label>
+              <div class="calc__input"><input id="ltv-margin" data-dec data-key="margin" inputmode="decimal" autocomplete="off" value="40"><span class="unit">%</span></div>
+            </div>
+            <div class="field">
+              <label for="ltv-cac">Bitta mijoz narxi (CAC)</label>
+              <div class="calc__input"><input id="ltv-cac" data-num inputmode="numeric" autocomplete="off" value="200 000"><span class="unit">so'm</span></div>
+            </div>
+          </div>
+          <p class="hint">CAC birinchi tabdagi natijadan avtomatik olinadi. O'zingiz yozsangiz, sizning raqamingiz qoladi.</p>
+          <button type="button" class="calc__clear" data-clear>Maydonlarni tozalash</button>
+        </form>
+
+        <div class="calc__out" aria-live="polite">
+          <span class="calc__label">Mijozdan butun davrdagi foyda</span>
+          <output class="calc__big" id="ltv-out">—</output>
+          <dl class="calc__rows">
+            <div><dt>LTV : CAC nisbati</dt><dd id="ltv-ratio">—</dd></div>
+            <div><dt>Mijoz narxi qoplanadi</dt><dd id="ltv-payback">—</dd></div>
+            <div><dt>Mijozdan jami savdo</dt><dd id="ltv-rev">—</dd></div>
+            <div><dt>Jami xaridlar soni</dt><dd id="ltv-count">—</dd></div>
+          </dl>
+          <p class="calc__verdict" id="ltv-verdict" hidden></p>
+        </div>
+      </div>
+    </div>
+
+    <p class="calc-cta reveal">Raqamlar yoqmadimi? <a href="/kontakt/#konsultatsiya">Bepul auditda</a> qaysi kanal pulni yeyayotganini birga topamiz.</p>
+  </div>
+</section>
+
+<section class="band band--cream">
+  <div class="wrap">
+    <div class="lockup reveal">
+      <h2>Bu raqamlar nimani anglatadi</h2>
+      <div class="rule"></div>
+      <p class="sub">Formulalar oddiy tilda</p>
+    </div>
+
+    <div class="plans reveal stagger">
+      <div class="plan">
+        <div class="plan__head">
+          <h3>CAC</h3>
+          <p>Customer Acquisition Cost — bitta yangi mijozni jalb qilish narxi.</p>
+        </div>
+        <div>
+          <h4>Formula</h4>
+          <ul><li>Marketing va sotuv xarajatlari ÷ yangi mijozlar soni</li></ul>
+        </div>
+        <div>
+          <h4>Qachon xavotir olish kerak</h4>
+          <ul>
+            <li>CAC oydan oyga o'syapti, savdo esa joyida turibdi</li>
+            <li>CAC birinchi xariddagi foydadan katta va mijozlar qaytib kelmayapti</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="plan">
+        <div class="plan__head">
+          <h3>ROMI</h3>
+          <p>Return on Marketing Investment — marketingga tikilgan pulning qaytimi.</p>
+        </div>
+        <div>
+          <h4>Formula</h4>
+          <ul><li>(Savdo × marja − marketing xarajati) ÷ marketing xarajati × 100%</li></ul>
+        </div>
+        <div>
+          <h4>Qachon xavotir olish kerak</h4>
+          <ul>
+            <li>ROMI noldan past — reklama foyda emas, zarar keltiryapti</li>
+            <li>ROI ni tushumdan hisoblayapsiz — bu natijani bir necha baravar bo'rttiradi</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="plan">
+        <div class="plan__head">
+          <h3>LTV</h3>
+          <p>Lifetime Value — mijozning siz bilan bo'lgan butun davrdagi qiymati.</p>
+        </div>
+        <div>
+          <h4>Formula</h4>
+          <ul><li>O'rtacha chek × jami xaridlar soni × marja</li></ul>
+        </div>
+        <div>
+          <h4>Qachon xavotir olish kerak</h4>
+          <ul>
+            <li>LTV : CAC nisbati 1 dan past — har yangi mijoz zarar</li>
+            <li>Nisbat 3 dan past — o'sish uchun zaxira kam. Ko'p bizneslar 3 : 1 ni mo'ljal qiladi</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="plans-note reveal">Kalkulyator yo'nalish beradi, chuqur tahlil o'rnini bosmaydi: natija siz kiritgan raqamlar qanchalik aniq bo'lsa, shunchalik to'g'ri chiqadi.</p>
+  </div>
+</section>
+
+<script src="/js/kalkulyator.js" defer></script>
